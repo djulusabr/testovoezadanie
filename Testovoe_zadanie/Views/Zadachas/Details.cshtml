@@ -1,13 +1,12 @@
 ﻿@model MyLib.Zadacha
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Подробности задачи";
 }
 
-<h1>Details</h1>
+<h1>Подробности задачи</h1>
 
 <div>
-    <h4>Zadacha</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -37,6 +36,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+    <a asp-action="Complete" asp-route-id="@Model.Id">Пометить @(Model.IsComplete ? "не" : "")выполненной</a> |
+    <a asp-action="Delete" asp-route-id="@Model.Id">Удалить</a> |
+    <a asp-action="Index">Назад в список</a>
 </div>
